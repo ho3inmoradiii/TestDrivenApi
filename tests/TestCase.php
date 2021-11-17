@@ -21,8 +21,8 @@ abstract class TestCase extends BaseTestCase
         return TodoList::factory()->create();
     }
 
-    public function createTask()
+    public function createTask($args = [])
     {
-        return Task::factory()->create();
+        return Task::factory()->create($args);
     }
 }

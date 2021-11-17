@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Task;
+use App\Models\TodoList;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TaskFactory extends Factory
@@ -17,6 +18,9 @@ class TaskFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
+            'todo_list_id' => function() {
+                return TodoList::factory()->create()->id;
+            }
         ];
     }
 }
