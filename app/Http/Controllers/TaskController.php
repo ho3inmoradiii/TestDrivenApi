@@ -30,7 +30,7 @@ class TaskController extends Controller
 
     public function update(Task $task,Request $request)
     {
-        $task->update($request->only('title'));
+        $task->update($request->only('title','status'));
         return $task;
     }
 }
